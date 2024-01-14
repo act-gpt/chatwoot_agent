@@ -16,10 +16,10 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-marino = os.getenv("MARINO", 'https://demo.act-gpt.com')
+marino = os.getenv("MARINO_URL", 'http://0.0.0.0:12345')
 marino_id = os.getenv("MARINO_ID", '')
 marino_token = os.getenv("MARINO_TOKEN", '')
-chatwoot = os.getenv("CHATWOOT", 'https://chat.concloud.net')
+chatwoot = os.getenv("CHATWOOT_URL", 'http://localhost:3000')
 chatwoot_token = os.getenv("CHATWOOT_TOKEN", '')
 
 retries = Retry(
