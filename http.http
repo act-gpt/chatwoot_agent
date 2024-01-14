@@ -1,0 +1,154 @@
+@HOST = http://localhost:8000
+@contentType = application/json
+
+# send to chat
+POST {{HOST}}/bot/chat HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "account": {
+        "id": 2,
+        "name": "Concloud LTD."
+    },
+    "additional_attributes": {},
+    "content_attributes": {
+        "in_reply_to": null
+    },
+    "content_type": "text",
+    "content": "hello from bot agent",
+    "conversation": {
+        "additional_attributes": {
+            "browser": {
+                "device_name": "Unknown",
+                "browser_name": "Microsoft Edge",
+                "platform_name": "macOS",
+                "browser_version": "120.0.0.0",
+                "platform_version": "10.15.7"
+            },
+            "referer": "https://act-gpt.com/",
+            "initiated_at": {
+                "timestamp": "Tue Jan 09 2024 10:55:49 GMT+0800 (中国标准时间)"
+            },
+            "browser_language": "zh"
+        },
+        "can_reply": true,
+        "channel": "Channel::WebWidget",
+        "contact_inbox": {
+            "id": 66,
+            "contact_id": 66,
+            "inbox_id": 2,
+            "source_id": "e628651b-6907-4386-89f5-f1e53ef67344",
+            "created_at": "2024-01-09T02:55:30.803Z",
+            "updated_at": "2024-01-09T02:55:30.803Z",
+            "hmac_verified": false,
+            "pubsub_token": "R7SyoGm5w8pDyLvTvsWwv2u1"
+        },
+        "id": 6,
+        "inbox_id": 2,
+        "messages": [
+            {
+                "id": 143,
+                "content": "你好",
+                "account_id": 2,
+                "inbox_id": 2,
+                "conversation_id": 6,
+                "message_type": 0,
+                "created_at": 1704963157,
+                "updated_at": "2024-01-11T08:52:37.934Z",
+                "private": false,
+                "status": "sent",
+                "source_id": null,
+                "content_type": "text",
+                "content_attributes": {
+                    "in_reply_to": null
+                },
+                "sender_type": "Contact",
+                "sender_id": 66,
+                "external_source_ids": {},
+                "additional_attributes": {},
+                "processed_message_content": "你好",
+                "sentiment": {},
+                "conversation": {
+                    "assignee_id": 2,
+                    "unread_count": 3,
+                    "last_activity_at": 1704963157,
+                    "contact_inbox": {
+                        "source_id": "e628651b-6907-4386-89f5-f1e53ef67344"
+                    }
+                },
+                "sender": {
+                    "additional_attributes": {},
+                    "custom_attributes": {},
+                    "email": null,
+                    "id": 66,
+                    "identifier": null,
+                    "name": "thrumming-sound-627",
+                    "phone_number": null,
+                    "thumbnail": "",
+                    "type": "contact"
+                }
+            }
+        ],
+        "labels": [],
+        "meta": {
+            "sender": {
+                "additional_attributes": {},
+                "custom_attributes": {},
+                "email": null,
+                "id": 66,
+                "identifier": null,
+                "name": "thrumming-sound-627",
+                "phone_number": null,
+                "thumbnail": "",
+                "type": "contact"
+            },
+            "assignee": {
+                "id": 2,
+                "name": "jason",
+                "available_name": "jason",
+                "avatar_url": "",
+                "type": "user",
+                "availability_status": null,
+                "thumbnail": ""
+            },
+            "team": null,
+            "hmac_verified": false
+        },
+        "status": "pending",
+        "custom_attributes": {},
+        "snoozed_until": null,
+        "unread_count": 3,
+        "first_reply_created_at": "2024-01-09T02:58:21.969Z",
+        "priority": null,
+        "waiting_since": 1704939974,
+        "agent_last_seen_at": 1704951824,
+        "contact_last_seen_at": 1704963081,
+        "timestamp": 1704963157,
+        "created_at": 1704768949
+    },
+    "created_at": "2024-01-11T08:52:37.934Z",
+    "id": 143,
+    "inbox": {
+        "id": 2,
+        "name": "jiangsi.com"
+    },
+    "message_type": "incoming",
+    "private": false,
+    "sender": {
+        "account": {
+            "id": 2,
+            "name": "Concloud LTD."
+        },
+        "additional_attributes": {},
+        "avatar": "",
+        "custom_attributes": {},
+        "email": null,
+        "id": 66,
+        "identifier": null,
+        "name": "thrumming-sound-627",
+        "phone_number": null,
+        "thumbnail": ""
+    },
+    "source_id": null,
+    "event": "message_created"
+}
