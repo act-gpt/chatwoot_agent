@@ -1,4 +1,5 @@
 import os
+import re
 import time
 import uvicorn
 
@@ -55,7 +56,9 @@ def send_to_bot(message, sender, user):
         "Accept": "application/json",
         "Authorization": f"Bearer {marino_token}"
     }
-    r = session.post(f'{marino}/v1/chat/{marino_id}',json=data, headers=headers)
+    r = session.post(f'{re.sub('\/$', '', marino)}/v1/chat/{marino_id}',json=data, headers=headers)
+    if r.status_code != 200:
+        logger.error("marino status code error: " + r.status_code)
     res = r.json()
     return res['choices'][0]['message']['content']
 
@@ -63,13 +66,15 @@ def send_to_chatwoot(account, conversation, message):
     data = {
         'content': message
     }
-    url = f"{chatwoot}/api/v1/accounts/{account}/conversations/{conversation}/messages"
+    url = f"{re.sub('\/$', '', chatwoot)}/api/v1/accounts/{account}/conversations/{conversation}/messages"
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json",
         "api_access_token": f"{chatwoot_token}"
     }
     r = session.post(url, json=data, headers=headers)
+    if r.status_code != 200:
+        logger.error("chatwoot status code error: " + r.status_code)
     return r.json()
 
 
